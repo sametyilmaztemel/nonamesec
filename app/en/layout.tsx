@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { UIProvider } from "@/components/UIProvider";
@@ -20,33 +20,22 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "600"],
 });
 
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.nonamesecurity.com.tr"),
   title: {
-    default: "Noname Security | Saldırgan gibi düşünür, işiniz gibi koruruz.",
+    default: "Noname Security | Offensive + Defensive security partner",
     template: "%s | Noname Security",
   },
   description:
-    "Noname Security, Ankara Teknopark merkezli kıdemli ekibiyle penetrasyon testi, red team, SOC/MDR, olay müdahalesi ve KVKK/ISO 27001 danışmanlığı sunar.",
-  keywords: [
-    "penetrasyon testi",
-    "sızma testi",
-    "red team",
-    "SOC",
-    "MDR",
-    "KVKK danışmanlığı",
-    "ISO 27001",
-    "PCI DSS",
-    "bulut güvenliği",
-    "uygulama güvenliği",
-  ],
+    "Ankara-based Noname Security delivers penetration testing, red teaming, SOC/MDR, incident response and ISO 27001/KVKK consulting across EMEA.",
   openGraph: {
     type: "website",
-    locale: "tr_TR",
+    locale: "en_US",
     siteName: "Noname Security",
-    title: "Noname Security | Offensive + Defensive Güvenlik",
+    title: "Noname Security | Offensive + Defensive Security",
     description:
-      "Penetrasyon testi, red team, SOC/MDR, olay müdahalesi ve regülasyon danışmanlığıyla saldırı yüzeyinizi kapatın.",
+      "Partner with Noname Security for penetration testing, red teaming, SOC/MDR, incident response and compliance consulting.",
     images: [
       {
         url: "/og/default.jpg",
@@ -57,32 +46,29 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.nonamesecurity.com.tr",
+    canonical: "https://www.nonamesecurity.com.tr/en",
   },
   twitter: {
     card: "summary_large_image",
     title: "Noname Security",
     description:
-      "Offensive + Defensive yaklaşımla şirketinizi siber tehditlere karşı güçlendirin.",
+      "Offensive + Defensive security services for modern enterprises.",
     images: ["/og/default.jpg"],
-  },
-  icons: {
-    icon: "/favicon.ico",
   },
 };
 
-export default function RootLayout({
+export default function EnLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" data-theme="light" className="min-h-full" suppressHydrationWarning>
+    <html lang="en" data-theme="light" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-[var(--color-background)] text-[var(--color-light)]`}
         suppressHydrationWarning
       >
-        <UIProvider defaultLanguage="tr">
+        <UIProvider defaultLanguage="en">
           <BackgroundMesh />
           <Header />
           <main id="ana-icerik" className="min-h-screen">
